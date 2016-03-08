@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/robotartist/!svn/ver/27/RobotArtist/lib
+END
+opencv-245.jar
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/robotartist/!svn/ver/8/RobotArtist/lib/opencv-245.jar
+END
+RXTXcomm.jar
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/robotartist/!svn/ver/3/RobotArtist/lib/RXTXcomm.jar
+END
+rxtxSerial.dll
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/robotartist/!svn/ver/3/RobotArtist/lib/rxtxSerial.dll
+END
+opencv_java245.dll
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/robotartist/!svn/ver/8/RobotArtist/lib/opencv_java245.dll
+END
+libopencv_java244.dylib
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/robotartist/!svn/ver/15/RobotArtist/lib/libopencv_java244.dylib
+END
+libopencv_java245.so
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/robotartist/!svn/ver/19/RobotArtist/lib/libopencv_java245.so
+END
+rxtxParallel.dll
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/robotartist/!svn/ver/3/RobotArtist/lib/rxtxParallel.dll
+END
+opencv_java245_x64.dll
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/robotartist/!svn/ver/27/RobotArtist/lib/opencv_java245_x64.dll
+END
+commons-math3-3.2.jar
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/robotartist/!svn/ver/25/RobotArtist/lib/commons-math3-3.2.jar
+END

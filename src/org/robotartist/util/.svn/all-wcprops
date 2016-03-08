@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/robotartist/!svn/ver/89/RobotArtist/src/org/robotartist/util
+END
+LayoutFileFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/robotartist/!svn/ver/76/RobotArtist/src/org/robotartist/util/LayoutFileFilter.java
+END
+ImageViewer.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/robotartist/!svn/ver/21/RobotArtist/src/org/robotartist/util/ImageViewer.java
+END
+ImgHlpr.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/robotartist/!svn/ver/89/RobotArtist/src/org/robotartist/util/ImgHlpr.java
+END
+Loader.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/robotartist/!svn/ver/21/RobotArtist/src/org/robotartist/util/Loader.java
+END
+ExtensionFileFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/robotartist/!svn/ver/76/RobotArtist/src/org/robotartist/util/ExtensionFileFilter.java
+END
+OpencvNativeLibs.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/robotartist/!svn/ver/23/RobotArtist/src/org/robotartist/util/OpencvNativeLibs.java
+END

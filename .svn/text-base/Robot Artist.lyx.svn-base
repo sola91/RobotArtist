@@ -1,0 +1,1023 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language italian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman ae
+\font_sans lmss
+\font_typewriter courier
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 10
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 5cm
+\rightmargin 3cm
+\bottommargin 5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+
+\series bold
+Report progetto Robot Artist
+\end_layout
+
+\begin_layout Author
+Romelli Marco
+\begin_inset Newline newline
+\end_inset
+
+Solano Nicolò
+\begin_inset Newline newline
+\end_inset
+
+Bianchi Federico
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introduzione
+\end_layout
+
+\begin_layout Section
+Panoramica del progetto
+\end_layout
+
+\begin_layout Section
+Vettorizzazione
+\end_layout
+
+\begin_layout Section
+Cinematica
+\end_layout
+
+\begin_layout Standard
+Il braccio robotico con il quale abbiamo lavorato è un 
+\begin_inset Quotes eld
+\end_inset
+
+AL5D
+\begin_inset Quotes erd
+\end_inset
+
+ della Linkxmotion.
+ Esso è costituito da quattro giunti rotazionali: base,spalla,gomito e polso
+ (vedi figura sottostante).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+AL5D
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Per il calcolo della cinematica del robot abbiamo utilizzato il metodo di
+ Denavit-Hartemberg.
+\end_layout
+
+\begin_layout Subsection
+Rappresentazione Denavit-Hartenberg
+\end_layout
+
+\begin_layout Standard
+La convenzione di Denavit-Hartemberg viene utilizzata per far sì che ogni
+ trasformazione geometrica possa essere rappresentata nello spazio euclideo
+ tridimensionale con il numero minimo di parametri, ovvero quattro.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Utilizzando questo metodo abbiamo scelto i sistemi di riferimento dei vari
+ giunti e dell'end effector (nel nostro robot si tratta della penna).
+\begin_inset Newline newline
+\end_inset
+
+In seguito viene riportata la tabella che mostra i parametri di tutte le
+ trasformazioni omogenee del nostro robot.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\theta:$
+\end_inset
+
+ Rotazione intorno all'asse z del giunto successivo rispetto al precedente
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\alpha$
+\end_inset
+
+ : Rotazione intorno all'asse x del giunto successivo rispetto al precedente
+\end_layout
+
+\begin_layout Standard
+a : Traslazione lungo l'asse x del centro del sistema di riferimento successivo
+ rispetto al precedente
+\end_layout
+
+\begin_layout Standard
+d : Traslazione lungo l'asse z del centro del sistema di riferimento successivo
+ rispetto al precedente
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Link
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\theta$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\alpha$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+d
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\theta_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+90°
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\theta_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\theta_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\theta_{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Parametri D-H
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Nella figura seguente viene mostrata la rappresentazione tridimensionale
+ delle terne euclidee dei vari sistemi di riferimento.
+\end_layout
+
+\begin_layout Subsection
+Cinematica diretta
+\end_layout
+
+\begin_layout Standard
+La cinematica diretta permette di trasformare un punto dallo spazio dei
+ giunti allo spazio cartesiano, restituendo la corrispondente posizione
+ ed orientamento in un sistema di riferimento scelto a priori (nel nostro
+ robot abbiamo scelto come 
+\begin_inset Quotes eld
+\end_inset
+
+sistema mondo
+\begin_inset Quotes erd
+\end_inset
+
+ il sistema di riferimento della base).
+ 
+\begin_inset Newline newline
+\end_inset
+
+Attraverso la matrice finale di cinematica diretta, dati i parametri di
+ Denavit-Hartemberg di ogni giunto in un preciso istante di tempo, è possibile
+ quindi conoscere il punto dello spazio richiesto nel medesimo istante di
+ tempo.
+\begin_inset Newline newline
+\end_inset
+
+Inoltre, dato che nel nostro robot è necessario che la penna sia sempre
+ rivolta verso il basso perpendicolarmente al foglio, abbiamo deciso di
+ effettuare un'ulteriore rotazione dell'ultimo sistema di riferimento in
+ modo da avere l'asse z finale uscente dalla pinza.
+\begin_inset Newline newline
+\end_inset
+
+Le matrici di rototraslazione che ci permettono di spostarci dal sistema
+ di riferimento iniziale della base ai sistemi di riferimento dei giunti
+ successivi sono le seguenti (c è abbreviazione di coseno, s è abbreviazione
+ di seno):
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+MATRICE T01: rototraslazione tra la base e la spalla
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T01=\begin{array}{cccc}
+c1 & 0 & s1 & 0\\
+s1 & 0 & -c1 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 0 & 1
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+MATRICE T12: rototraslazione tra la spalla e il gomito
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T12=\begin{array}{cccc}
+c2 & s2 & 0 & a2\cdot c2\\
+s2 & -c2 & 0 & a2\cdot s2\\
+0 & 0 & -1 & 0\\
+0 & 0 & 0 & 1
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+MATRICE T23: rototraslazione tra il gomito e il polso
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T23=\begin{array}{cccc}
+c3 & s3 & 0 & a3*c3\\
+s3 & -c3 & 0 & a3*s3\\
+0 & 0 & -1 & 0\\
+0 & 0 & 0 & 1
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+MATRICE T34: rototraslazione tra il polso e la penna
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T34=\begin{array}{cccc}
+s4 & c4 & 0 & a4*s4\\
+-c4 & s4 & 0 & -a4*c4\\
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & 1
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+MATRICE DI ROTAZIONE: rotazione che verrà applicata alla fine per ottenere
+ l'asse z uscente dalla pinza
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+T_{rotazione}=\begin{array}{cccc}
+0 & 0 & 1 & 0\\
+0 & 1 & 0 & 0\\
+-1 & 0 & 0 & 0\\
+0 & 0 & 0 & 1
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La matrice di cinematica diretta finale, ottenuta moltiplicando nell'ordine
+ le matrice scritte in precedenza, è la seguente:
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+\begin_inset Formula 
+\[
+T_{diretta}=\begin{array}{cccc}
+-s1 & c1\cdot c(4-3+2) & c1\cdot s(4-3+2) & c1\cdot(a2\cdot c2+a3\cdot c(3-2)+a4\cdot s(4-3+2))\\
+c1 & s1\cdot c(4-3+2) & s1\cdot s(4-3+2) & s1\cdot(a2\cdot c2+a3\cdot c(3-2)+a4\cdot s(4-3+2))\\
+0 & s(4-3+2) & -c(4-3+2) & a2\cdot s2+a3\cdot s(3-2)+a4\cdot c(4-3+2)\\
+0 & 0 & 0 & 1
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Cinematica inversa
+\end_layout
+
+\begin_layout Standard
+La cinematica diretta invece, data una posa (posizione e orientamento) dell’end-
+effector, permette di determinare l’insieme di valori delle variabili di
+ giunto che la realizza.
+\begin_inset Newline newline
+\end_inset
+
+Per arrivare a conoscere le variabili di giunto occorre eguagliare un matrice
+ nota di rototraslazione (in cui le prime tre colonne della matrice rappresentan
+o l'orientamento dell'end effector, mentre l'ultima colonna rappresenta
+ la posizione dell'end effector) con la matrice trovata in precedenza nella
+ cinematica diretta, in questo modo:
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+\begin_inset Formula 
+\[
+\begin{array}{cccc}
+nx & sx & ox & px\\
+ny & sy & oy & py\\
+nz & sz & oz & pz\\
+0 & 0 & 0 & 1
+\end{array}=\begin{array}{cccc}
+-s1 & c1*c(4-3+2) & c1*s(4-3+2) & c1*(a2*c2+a3*c(3-2)+a4*s(4-3+2))\\
+c1 & s1*c(4-3+2) & s1*s(4-3+2) & s1*(a2*c2+a3*c(3-2)+a4*s(4-3+2))\\
+0 & s(4-3+2) & -c(4-3+2) & a2*s2+a3*s(3-2)+a4*c(4-3+2)\\
+0 & 0 & 0 & 1
+\end{array}
+\]
+
+\end_inset
+
+
+\size default
+Dal momento che nel nostro caso l'end effector (ovvero la penna) deve sempre
+ essere perpendicolare al foglio, utilizzando gli angoli di eulero arriviamo
+ a conoscere alcuni parametri dell'orientamento della matrice nota, ottenendo
+ la seguente relazione:
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+\begin_inset Formula 
+\[
+\begin{array}{cccc}
+nx & sx & 0 & px\\
+ny & sy & 0 & py\\
+0 & 0 & -1 & pz\\
+0 & 0 & 0 & 1
+\end{array}=\begin{array}{cccc}
+-s1 & c1*c(4-3+2) & c1*s(4-3+2) & c1*(a2*c2+a3*c(3-2)+a4*s(4-3+2))\\
+c1 & s1*c(4-3+2) & s1*s(4-3+2) & s1*(a2*c2+a3*c(3-2)+a4*s(4-3+2))\\
+0 & s(4-3+2) & -c(4-3+2) & a2*s2+a3*s(3-2)+a4*c(4-3+2)\\
+0 & 0 & 0 & 1
+\end{array}
+\]
+
+\end_inset
+
+
+\size default
+Ricavare le espressioni degli angoli di tutti i giunti a partire da questa
+ uguaglianza non è possibile in modo diretto; per questo abbiamo utilizzato
+ il metodo di Paul che dice di premoltiplicare entrambi i membri per l'inversa
+ della prima matrice (nel nostro caso T01):
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+\begin_inset Formula 
+\[
+T01^{-1}*\begin{array}{cccc}
+nx & sx & 0 & px\\
+ny & sy & 0 & py\\
+0 & 0 & -1 & pz\\
+0 & 0 & 0 & 1
+\end{array}=T01^{-1}*\begin{array}{cccc}
+-s1 & c1*c(4-3+2) & c1*s(4-3+2) & c1*(a2*c2+a3*c(3-2)+a4*s(4-3+2))\\
+c1 & s1*c(4-3+2) & s1*s(4-3+2) & s1*(a2*c2+a3*c(3-2)+a4*s(4-3+2))\\
+0 & s(4-3+2) & -c(4-3+2) & a2*s2+a3*s(3-2)+a4*c(4-3+2)\\
+0 & 0 & 0 & 1
+\end{array}
+\]
+
+\end_inset
+
+
+\size default
+Il risultato di questa operazione è il seguente:
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\size tiny
+\begin_inset Formula 
+\[
+\begin{array}{cccc}
+(c1\cdot nx+ny\cdot s1) & (c1\cdot sx+s1\cdot sy) & 0 & (c1\cdot px+py\cdot s1)\\
+0 & 0 & -1 & pz\\
+-(c1\cdot ny+nx\cdot s1) & -(c1\cdot sy+s1\cdot sx) & 0 & -(c1\cdot py-px\cdot s1)\\
+0 & 0 & 0 & 1
+\end{array}=\begin{array}{cccc}
+0 & c(4-3+2) & s(4-3+2) & a2\cdot c2+a3\cdot c(3-2)+a4\cdot s(4-3+2)\\
+0 & -s(4-3+2) & -c(4-3+2) & a2\cdot s2-a3\cdot s(3-2)-a4\cdot c(4-3+2)\\
+-1 & 0 & 0 & 0\\
+0 & 0 & 0 & 1
+\end{array}
+\]
+
+\end_inset
+
+
+\size default
+Eguagliando i termini [3,4] di entrambe le matrici otteniamo che:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\theta_{1}=\arctan(py/px)
+\]
+
+\end_inset
+
+Ora dall'uguaglianza dei termini [1,4] e [2,4] otteniamo le seguente uguaglianze
+:
+\begin_inset Formula 
+\[
+a2*c2+c(3-2)*a3+s(4-3+2)*a4=px*c1+py*S1
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a2*s2-s(3-2)*a3-c(4-3+2)*a4=pz
+\]
+
+\end_inset
+
+Elevando al quadrato:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+(px*c1+py*s1-s(4-3+2)*a4)^{2}=(c(3-2)*a3+c2*a2)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+(pz+c(4-3+2)*a4)^{2}=(s2*a2-s(3-2)*a3)^{2}
+\]
+
+\end_inset
+
+Sommando membro a membro si ottiene la seguente relazione:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{gather*}
+(px*c1+py*s1-s(4-3+2)*a4)^{2}+(pz+c(4-3+2)*a4)^{2}=\\
+=a2^{2}+a3^{2}+2*c2*c(3-2)*a2*a3-2*s2*s(3-2)*a2*a3=\\
+=a2^{2}+a3^{2}+2*c3*a2*a3
+\end{gather*}
+
+\end_inset
+
+Quindi:
+\begin_inset Formula 
+\[
+c3=((px*c1+py*s1-s(4-3+2)*a4)^{2}+(pz+c(4-3+2)*a4)^{2}\text{–}a2^{2}-a3^{2})/2*a2*a3
+\]
+
+\end_inset
+
+Sempre dall'uguaglianza tra le matrici so che c(4-3+2)=1 e s(4-3+2)=0, perciò:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+c3=((px*c1+py*s1)^{2}+(pz+a4)^{2}\text{–}a2^{2}-a3^{2})/2*a2*a3
+\]
+
+\end_inset
+
+A questo punto è possibile ricavare l'angolo del terzo giunto:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\theta_{3}=\arccos(c3)
+\]
+
+\end_inset
+
+Modificando le equazioni precedenti ricavo anche le espressioni di c2 e
+ s2:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{flalign*}
+c2 & =(s3*a3*(-a4-pz)+(a2+a3*c3)*(px*c1+py*s1))/(2*a2*c3*a3+a2^{2}+a3^{2})\\
+s2 & =(-a2*c2-c2*a3*c3+(px*c1+py*s1-a4*s(4-3+2)))/(a3*s3)
+\end{flalign*}
+
+\end_inset
+
+Attraverso l'arcotangente otteniamo anche 
+\begin_inset Formula $\theta_{2}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\theta_{2}=\arctan(s2/c2)
+\]
+
+\end_inset
+
+Ora, s(4-3+2) = 0 implica che 
+\begin_inset Formula $\theta_{4}+\theta_{3}-\theta_{2}=0$
+\end_inset
+
+ , quindi:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\theta_{4}=\theta_{3}-\theta_{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Controllo
+\end_layout
+
+\begin_layout Subsection
+Calcolo delle traiettorie
+\end_layout
+
+\begin_layout Subsection
+Implementazione su Arduino
+\end_layout
+
+\begin_layout Subsection
+Protocollo di comunicazione
+\end_layout
+
+\begin_layout Section
+Conclusioni
+\end_layout
+
+\begin_layout Subsection
+Possibili sviluppi
+\end_layout
+
+\begin_layout Subsection
+Impressioni personali
+\end_layout
+
+\end_body
+\end_document
